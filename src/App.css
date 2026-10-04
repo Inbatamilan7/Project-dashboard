@@ -55,12 +55,12 @@ body {
 }
 
 .stat-card {
-  background: white (10, 44, 38);
+  background: rgb(214, 204, 204) (10, 44, 38);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   text-align: center;
-  border: 1px solid #e6f112;
+  border: 1px solid #902117;
 }
 
 .stat-card h3 {
