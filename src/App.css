@@ -27,7 +27,7 @@ body {
 }
 
 .nav-links a {
-  color: #94a3b8;
+  color: #04d582;
   text-decoration: none;
   margin-left: 25px;
   font-weight: 600;
@@ -35,7 +35,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: white;
+  color: rgb(106, 20, 20);
 }
 
 .main-content {
@@ -55,7 +55,7 @@ body {
 }
 
 .stat-card {
-  background: white;
+  background: rgb(220, 237, 31);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -66,7 +66,7 @@ body {
 .stat-card h3 {
   margin: 0;
   font-size: 0.85rem;
-  color: #64748b;
+  color: #10171f5a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -75,7 +75,7 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin: 0.5rem 0 0 0;
-  color: #2563eb;
+  color: #b70f9e;
 }
 
 .board-header {
@@ -97,12 +97,12 @@ body {
   border: 2px solid #000000;
   border-radius: 8px;
   font-size: 0.95rem;
-  background: rgb(0, 0, 0);
+  background: rgb(22, 164, 86);
   outline: none;
 }
 
 .controls-bar input:focus, .controls-bar select:focus {
-  border-color: #2563eb;
+  border-color: #9926c0;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .column {
-  background: #f1f5f9;
+  background: #33a9c7;
   padding: 1.2rem;
   border-radius: 12px;
   min-height: 500px;
@@ -132,20 +132,20 @@ body {
 }
 
 .count-badge {
-  background: #cbd5e1;
-  color: #334155;
+  background: #740332;
+  color: #c46d0a;
   font-size: 0.75rem;
   padding: 2px 8px;
   border-radius: 12px;
 }
 
 .task-card {
-  background: white;
+  background: rgb(0, 0, 0);
   padding: 1.2rem;
   border-radius: 10px;
   margin-bottom: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-  border: 1px solid #e2e8f0;
+  border: 1px solid #3382e9;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
