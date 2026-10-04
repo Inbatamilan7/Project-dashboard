@@ -51,7 +51,7 @@ function useTasks() {
 function Dashboard() {
   const [tasks] = useTasks();
   const total = tasks.length;
-  const todoCount = tasks.filter(t => t.status === 'Toto').length;
+  const todoCount = tasks.filter(t => t.status === 'Todo').length;
   const inProgressCount = tasks.filter(t => t.status === 'In Progress').length;
   const reviewCount = tasks.filter(t => t.status === 'Review').length;
   const doneCount = tasks.filter(t => t.status === 'Done').length;
