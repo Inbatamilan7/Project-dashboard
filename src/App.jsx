@@ -22,7 +22,7 @@ export default function App() {
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2> ProTask Dashboard</h2>
+      <h2> c:\Users\thirumalaivasan\Downloads\5ba46ee8d4038c8c8d80ae830a879ac2.png ProTask Dashboard</h2>
       <div className="nav-links">
         <Link to="/">Overview</Link>
         <Link to="/board">Task Board</Link>
@@ -83,7 +83,7 @@ function TaskBoard() {
   const [currentTask, setCurrentTask] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('Toto');
+  const [status, setStatus] = useState('Todo');
   const [priority, setPriority] = useState('Medium');
   const [assignee, setAssignee] = useState('');
 
@@ -91,7 +91,7 @@ function TaskBoard() {
     setCurrentTask(null);
     setTitle('');
     setDescription('');
-    setStatus('Toto');
+    setStatus('Tod o');
     setPriority('Medium');
     setAssignee('');
     setIsModalOpen(true);
@@ -110,7 +110,6 @@ function TaskBoard() {
   const handleSaveTask = (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-
     if (currentTask) {
       setTasks(tasks.map(t => t.id === currentTask.id ? { ...t, title, description, status, priority, assignee } : t));
     } else {
@@ -230,7 +229,7 @@ function TaskBoard() {
               
               <label>Status</label>
               <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                <option value="Toto">Todo</option>
+                <option value="Todo">Todo</option>
                 <option value="In Progress">In Progress</option>
                 <option value="Review">Review</option>
                 <option value="Done">Done</option>
