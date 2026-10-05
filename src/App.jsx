@@ -26,7 +26,7 @@ function Navbar() {
       <div className="nav-links">
         <Link to="/">Overview</Link>
         <Link to="/board">Task Board</Link>
-      </div>
+      </div> 
     </nav>
   );
 }
@@ -35,7 +35,7 @@ function useTasks() {
   const [tasks, setTasks] = useState(() => {
     const saved = localStorage.getItem('dashboard_tasks');
     return saved ? JSON.parse(saved) : [
-      { id: '1', title: 'Design Landing Page', description: 'Create wireframes and UI components', status: 'Todo', priority: 'High', assignee: 'Alice' },
+      { id: '1', title: 'Design Landing Page', description: 'Create wireframes and UI components', status: 'pending', priority: 'High', assignee: 'Alice' },
       { id: '2', title: 'API Integration', description: 'Connect frontend to backend endpoints', status: 'In Progress', priority: 'Medium', assignee: 'Bob' },
       { id: '3', title: 'Security Audit', description: 'Check for vulnerabilities and fix bugs', status: 'Review', priority: 'High', assignee: 'Maria' }
     ];
@@ -51,7 +51,7 @@ function useTasks() {
 function Dashboard() {
   const [tasks] = useTasks();
   const total = tasks.length;
-  const todoCount = tasks.filter(t => t.status === 'Todo').length;
+  const pendingCount = tasks.filter(t => t.status === 'pending').length;
   const inProgressCount = tasks.filter(t => t.status === 'In Progress').length;
   const reviewCount = tasks.filter(t => t.status === 'Review').length;
   const doneCount = tasks.filter(t => t.status === 'Done').length;
@@ -61,7 +61,7 @@ function Dashboard() {
       <h2>Project Overview & Analytics</h2>
       <div className="stats-grid">
         <div className="stat-card"><h3>Total Tasks</h3><p>{total}</p></div>
-        <div className="stat-card"><h3>Todo</h3><p>{todoCount}</p></div>
+        <div className="stat-card"><h3>pending</h3><p>{pendingCount}</p></div>
         <div className="stat-card"><h3>In Progress</h3><p>{inProgressCount}</p></div>
         <div className="stat-card"><h3>Review</h3><p>{reviewCount}</p></div>
         <div className="stat-card"><h3>Done</h3><p>{doneCount}</p></div>
@@ -83,7 +83,7 @@ function TaskBoard() {
   const [currentTask, setCurrentTask] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('Todo');
+  const [status, setStatus] = useState('pending');
   const [priority, setPriority] = useState('Medium');
   const [assignee, setAssignee] = useState('');
 
@@ -143,7 +143,7 @@ function TaskBoard() {
     return matchesSearch && matchesStatus && matchesPriority;
   });
 
-  const columns = ['Todo', 'In Progress', 'Review', 'Done'];
+  const columns = ['pending', 'In Progress', 'Review', 'Done'];
 
   return (
     <div className="task-board-page">
@@ -161,7 +161,7 @@ function TaskBoard() {
         />
         <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
           <option value="All">All Statuses</option>
-          <option value="Todo">Todo</option>
+          <option value="pending">pending</option>
           <option value="In Progress">In Progress</option>
           <option value="Review">Review</option>
           <option value="Done">Done</option>
@@ -193,7 +193,7 @@ function TaskBoard() {
                           value={task.status} 
                           onChange={(e) => handleStatusChange(task.id, e.target.value)}
                         >
-                          <option value="Todo">Todo</option>
+                          <option value="pending">pending</option>
                           <option value="In Progress">In Progress</option>
                           <option value="Review">Review</option>
                           <option value="Done">Done</option>
@@ -229,7 +229,7 @@ function TaskBoard() {
               
               <label>Status</label>
               <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                <option value="Todo">Todo</option>
+                <option value="pending">pending</option>
                 <option value="In Progress">In Progress</option>
                 <option value="Review">Review</option>
                 <option value="Done">Done</option>
